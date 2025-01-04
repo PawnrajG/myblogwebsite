@@ -7,7 +7,9 @@ To improve myself in the fullstack development on MERN stack
 ## Initialize npm and install dependencies
 
 `npm init -y`
+
 `npm install nodemon -D`
+
 `npm install express mongoose cookie-parser jsonwebtoken bcrypt dotenv`
 
 # frontend
@@ -15,12 +17,15 @@ To improve myself in the fullstack development on MERN stack
 ## Create a react vite project using
 
 `npm create vite@latest`
+
 `cd frontend`
+
 `npm install`
 
 ## install dependencies required
 
 `npm install -D tailwindcss postcss autoprefixer`
+
 `npx tailwindcss init -p`
 
 Add to index.css
