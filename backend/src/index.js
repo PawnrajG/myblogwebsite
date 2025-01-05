@@ -5,6 +5,7 @@ import blogRoutes from "./routes/blog.route.js";
 import commentRoutes from "./routes/comment.route.js";
 import connectMongoDB from "./lib/db.js";
 import cookieParser from "cookie-parser";
+import cors from 'cors';
 
 const app = express();
 
