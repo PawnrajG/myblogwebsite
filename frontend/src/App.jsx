@@ -9,6 +9,7 @@ import { Loader } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const { user, setUser, isAuthenticated } = useAuthStore();
@@ -32,14 +33,14 @@ const App = () => {
       <Routes>
         <Route
           path="/login"
-          element={!user ? <Login /> : <Navigate to="/home" />}
+          element={!user ? <Login /> : <Navigate to="/" />}
         />
         <Route
           path="/signup"
-          element={!user ? <SignUp /> : <Navigate to="/home" />}
+          element={!user ? <SignUp /> : <Navigate to="/" />}
         />
         <Route
-          path="/home"
+          path="/"
           element={user ? <HomePage /> : <Navigate to="/login" />}
         />
         {/* <Route path="/home" element={<HomePage/>}/> */}
@@ -48,6 +49,7 @@ const App = () => {
           path="/post-blog"
           element={user ? <BlogPost /> : <Navigate to="/login" />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
     </>
