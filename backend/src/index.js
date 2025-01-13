@@ -13,8 +13,14 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
+
+// CORS configuration
+const allowedOrigin = process.env.NODE_ENV === "production"
+    ? "https://myblogsite-uvve.onrender.com"  // Production frontend URL
+    : "http://localhost:5173";  // Development URL for local testing
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigin,
     credentials: true
 }));
 
