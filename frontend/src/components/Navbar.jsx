@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="hidden md:flex flex-row w-56 justify-around mr-10 items-center">
         <Link
           className="p-3 ease-in-out hover:border-b-2 delay-50 hover:text-white border-white "
-          to="/home"
+          to="/"
         >
           Home
         </Link>
