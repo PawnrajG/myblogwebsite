@@ -50,7 +50,7 @@ const Navbar = () => {
               </a>
             </li> */}
             <li className="md:hidden visible">
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li className="md:hidden visible">
               <Link to="/post-blog">Create blog</Link>
