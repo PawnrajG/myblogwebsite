@@ -6,6 +6,7 @@ import commentRoutes from "./routes/comment.route.js";
 import connectMongoDB from "./lib/db.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors';
+// import path from 'path';
 
 const app = express();
 
@@ -27,6 +28,13 @@ app.use(cors({
 app.use("/api/auth",authRoutes);
 app.use("/api/blog",blogRoutes);
 app.use("/api/comment",commentRoutes);
+
+// if(process.env.NODE_ENV==="production"){
+//     app.use(express.static(path.join(__dirname, "../frontend/dist")));
+//     app.get("*",(req,res)=>{
+//         res.sendFile(path.join(__dirname, "../frontend","dist","index.html"));
+//     });
+// }
 
 const PORT = process.env.PORT;
 app.listen(PORT,()=>{
