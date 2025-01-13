@@ -2,23 +2,29 @@ import Blog from "../models/blog.js";
 
 export const addBlog = async(req,res)=>{
     try{
-        const {title,content,author,image} = req.body;
-        if(!title | !content | !author | !image){
-            return res.status(400).json({message: "Invalid data"});
-        }
+        const {title,content,author} = req.body;
+        // if(!title || !content || !author){
+        //     return res.status(400).json({message: "Invalid data"});
+        // }
+        // if(!req.file){
+        //     return res.status(400).json({message:"No image uploaded!"});
+        // }
         const blog = new Blog({
             title,
             content,
             author,
-            image
+            image:{
+                data: req.file.buffer,
+                contentType: req.file.mimetype
+            }
         });
         const data = await blog.save();
-        return res.status(200).json({
+        return res.status(201).json({
             message:"Blog is published",
             data
         });
     }catch(error){
-        console.log("Error in adding blog "+error.message);
+        console.log("Error in adding blog "+ error.message);
         return res.status(500).json({message:"Internal server error"});
     }
 }
@@ -33,6 +39,7 @@ export const editBlog = async(req,res)=>{
             author,
             image
         },{new:true});
+        
         if(!blogToUpdate){
             return res.status(404).json({message: "Invalid data"});
         }
@@ -48,8 +55,9 @@ export const editBlog = async(req,res)=>{
 
 export const getAllBlog = async(req,res)=>{
     try{
-        const Blogs = await Blog.find({},"-password"); //get all blogs data without passwords
-        return res.status(200).json({Blogs});
+        const Blogs = await Blog.find({},"-password"); 
+        //get all blogs data without passwords
+        return res.status(200).json(Blogs);
     }catch(error){
         console.log("Error in getting all blogs "+error.message);
         return res.status(500).json({message:"Internal server error"});

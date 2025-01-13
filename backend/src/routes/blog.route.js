@@ -1,8 +1,13 @@
 import express from "express";
 import { addBlog, editBlog, getAllBlog, getBlog } from "../controllers/blog.controller.js";
-const router = express.Router();
+import multer from "multer";
 
-router.post("/add",addBlog);
+
+const router = express.Router();
+const storage = multer.memoryStorage();
+const upload = multer({storage:storage});
+
+router.post("/add",upload.single("image"),addBlog);
 
 router.put("/edit/:id",editBlog);
 
