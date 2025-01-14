@@ -76,7 +76,7 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="min-w-[65px] max-w-[70%] mx-auto p-2 md:p-4 md:hover:border-2 md:hover:border-slate-600 rounded-xl">
+    <div className="min-w-96 max-w-[70%] mx-3 md:mx-auto p-2 md:p-4 md:hover:border-2 md:hover:border-slate-600 rounded-xl">
       <h1 className="p-1 md:p-2 text-center text-lg md:text-4xl font-bold md:mt-6 mt-4">
         Post Your Thoughts
       </h1>
