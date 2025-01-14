@@ -106,7 +106,7 @@ const Comments = ({ BlogId }) => {
             name="text"
             onChange={handleInput}
             value={comment.text}
-            className="text-[11px] md:text-sm text-gray-800 dark:text-slate-50 outline-none px-2 md:px-6 md:py-2 py-1 min-w-56 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
+            className="text-[11px] md:text-sm text-gray-800 dark:text-slate-50 outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
             type="text"
             placeholder="Add your comment..."
           />
@@ -124,13 +124,13 @@ const Comments = ({ BlogId }) => {
             blogComments.map((comment) => (
               <div
                 key={comment._id}
-                className="w-full border-b-2 min-w-56 border-gray-400 flex flex-row justify-between items-center my-4"
+                className="w-full border-b-2 min-w-72 border-gray-400 flex flex-row justify-between items-center my-4"
               >
                 <div
                   onClick={() => {
                     handleCommentEdit(comment);
                   }}
-                  className="cursor-pointer text-green-500 text-[11px] md:text-[14px] text-justify w-auto md:w-full font-semibold"
+                  className="cursor-pointer text-green-500 text-[11px] md:text-[14px] leading-relaxed w-64 md:w-full font-semibold"
                 >
                   <span className="text-gray-800 dark:text-slate-50">
                     {"@" + comment.author}
@@ -138,7 +138,7 @@ const Comments = ({ BlogId }) => {
                   </span>
                   {comment.text}
                 </div>
-                <div className="flex text-sm justify-center rounded-lg transition  ease-in-out delay-100 hover:scale-90 hover:bg-slate-700 items-center h-8 w-8 bg-black">
+                <div className="ml-4 flex text-sm justify-center rounded-lg transition ease-in-out delay-100 hover:scale-90 hover:bg-slate-700 items-center h-8 w-8 bg-black">
                   <AiFillDelete
                     onClick={() => handleDelete(comment)}
                     className="cursor-pointer md:text-lg"

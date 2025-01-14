@@ -13,7 +13,7 @@ const BlogCard = ({ Blogs }) => {
               className="p-4 md:w-[70%] mx-auto transition ease-in-out hover:scale-[102%] duration-300 delay-50"
             >
               <Link to={`/blog/${blog._id}`}>
-                <div className="h-full border-2 shadow-lg shadow-gray-300 dark:shadow-slate-200 dark:border-slate-50 border-opacity-60 rounded-lg overflow-hidden">
+                <div className="h-full border-2 shadow-lg shadow-gray-300 dark:shadow-sm dark:shadow-slate-200 dark:border-slate-50 border-opacity-60 rounded-lg overflow-hidden">
                   {blog.image && blog.image.data ? (
                     <img
                       src={blog.imageUrl}
