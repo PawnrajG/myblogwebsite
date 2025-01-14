@@ -80,12 +80,15 @@ const BlogPost = () => {
       <h1 className="p-1 md:p-2 text-center text-lg md:text-4xl font-bold md:mt-6 mt-4">
         Post Your Thoughts
       </h1>
-      <form className="flex mx-5 my-4 items-center flex-col" method="POST">
+      <form
+        className="flex mx-5 my-4 items-center flex-col dark:text-slate-50 text-gray-700"
+        method="POST"
+      >
         <input
           name="title"
           value={blog.title}
           onChange={handleInput}
-          className="text-sm text-slate-50 outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
+          className="text-sm outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
           type="text"
           placeholder="Blog title"
           required
@@ -94,7 +97,7 @@ const BlogPost = () => {
           name="author"
           value={blog.author}
           onChange={handleInput}
-          className="text-sm text-slate-50 outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
+          className="text-sm outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
           type="text"
           placeholder="Author"
           required
@@ -103,7 +106,7 @@ const BlogPost = () => {
           name="content"
           value={blog.content}
           onChange={handleInput}
-          className="h-[450px] resize-none text-sm text-slate-50 outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
+          className="h-[450px] resize-none text-sm outline-none px-4 md:px-6 py-2 min-w-64 w-full outline-3 hover:outline-slate-300 rounded-lg m-2 md:m-3 border-2 border-gray-700"
           type="text"
           placeholder="Share your thoughts..."
           required
