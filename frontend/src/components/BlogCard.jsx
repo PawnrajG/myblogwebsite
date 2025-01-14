@@ -10,10 +10,10 @@ const BlogCard = ({ Blogs }) => {
           Blogs.map((blog) => (
             <div
               key={blog._id}
-              className="p-4 md:w-[70%] mx-auto transition ease-in-out hover:scale-[102%] duration-300 delay-50 shadow-lg shadow-gray-800 dark:shadow-slate-200"
+              className="p-4 md:w-[70%] mx-auto transition ease-in-out hover:scale-[102%] duration-300 delay-50"
             >
               <Link to={`/blog/${blog._id}`}>
-                <div className="h-full border-2 border-black dark:border-slate-50 border-opacity-60 rounded-lg overflow-hidden">
+                <div className="h-full border-2 border-gray-600 shadow-lg shadow-gray-400 dark:shadow-slate-200 dark:border-slate-50 border-opacity-60 rounded-lg overflow-hidden">
                   {blog.image && blog.image.data ? (
                     <img
                       src={blog.imageUrl}
